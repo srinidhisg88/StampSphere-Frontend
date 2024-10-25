@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from "../assets/CategoryList/StampSphere_white_background.png";
+import Logo from "../assets/CategoryList/StampSpherebg.png";
 const Sidebar = () => {
   return (
     <div className="p-4">
