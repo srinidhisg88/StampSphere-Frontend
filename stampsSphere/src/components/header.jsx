@@ -34,10 +34,10 @@ export default function Header() {
             // If no user, show login/register buttons
             <>
               <Button variant="outlined" className="mr-2">
-                <a href="/login">Login</a>
+                <a className="text-l" href="/login">Login</a>
               </Button>
               <Button variant="outlined">
-                <a href="/register">Register</a>
+                <a className="text-l" href="/register">Register</a>
               </Button>
             </>
           )}
