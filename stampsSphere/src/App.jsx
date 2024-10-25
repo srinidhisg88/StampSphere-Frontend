@@ -13,7 +13,6 @@ import { Provider } from 'react-redux';
 import HeroSection from './components/HeroSection.jsx';
 const App = () => {
   return (
-
     <div className="h-screen flex overflow-hidden">
       <Provider store={store}>
         {/* Sidebar - Fixed on the Left */}
@@ -24,10 +23,10 @@ const App = () => {
         {/* Main Content - Adjusted for Sidebar */}
         <div className="ml-72 flex-1 flex flex-col">
           {/* Fixed Header */}
-          <div className="fixed top-0 left-72 right-0 h-16 bg-white shadow">
+          <div className="fixed top-0 left-72 right-0 h-16 bg-white shadow z-50">
             <Header />
           </div>
-
+          
           {/* Main Content - Below Header */}
           <div className="flex-1 overflow-auto pt-16">
             <Routes>
@@ -42,8 +41,10 @@ const App = () => {
           </div>
 
           {/* Footer - Below Main Content */}
-          <Footer />
+            <Footer />
         </div>
+
+
       </Provider>
     </div>
   );
