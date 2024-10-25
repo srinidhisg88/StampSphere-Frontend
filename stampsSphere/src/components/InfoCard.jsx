@@ -6,9 +6,8 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import img1 from '../assets/images/difinitive_stamps/img1.jpg'
 
-const InfoCard = ({ image }) => {
+const InfoCard = ({ image, name, about, price, state }) => {
   return (
     <MaterialCard className="mt-6 w-96">
       <CardHeader color="blue-gray" className="relative h-56 overflow-hidden">
@@ -27,15 +26,15 @@ const InfoCard = ({ image }) => {
         </CardHeader> */}
       <CardBody>
         <Typography variant="h5" color="blue-gray" className="mb-2">
-          Syed Ahmed Khan Stamp
+          {name}
         </Typography>
         <Typography>
-          Histroy about the stamp
-          <p className="font-bold">Price: Rs.599</p>
+          {about}
+          <p className="font-bold">Price: {price}</p>
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
-        <Button className="mt-2 px-4 py-2 bg-red-500 text-white rounded-md transition-all duration-500 hover:scale-105">Buy Now</Button>
+        <Button className="mt-2 px-4 py-2 bg-red-500 text-white rounded-md transition-all duration-500 hover:scale-105">{state}</Button>
       </CardFooter>
     </MaterialCard>
   );
