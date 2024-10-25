@@ -1,8 +1,14 @@
 import { Button, Avatar } from "@material-tailwind/react";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../slices/AuthSlice"; // Adjust the import based on your project structure
 
 export default function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Example state for login
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.authUser.user);
+
+  const handleLogout = () => {
+    dispatch(logoutUser()); // Dispatch the logout action
+  };
 
   return (
     <header className="bg-gray-400 shadow-md dark:bg-gray-800 p-4">
@@ -12,13 +18,20 @@ export default function Header() {
 
         {/* Login/Signup or Profile Avatar */}
         <div className="flex items-center space-x-4">
-          {isLoggedIn ? (
-            <Avatar
-              src="https://docs.material-tailwind.com/img/face-2.jpg" // Replace with your avatar URL
-              size="sm"
-              className="cursor-pointer"
-            />
+          {user ? (
+            <>
+              {/* If user exists, show the avatar and logout button */}
+              <Avatar
+                src={user.avatarUrl || "https://docs.material-tailwind.com/img/face-2.jpg"} // Use user avatar or a default image
+                size="sm"
+                className="cursor-pointer"
+              />
+              <Button variant="outlined" onClick={handleLogout}>
+                Logout
+              </Button>
+            </>
           ) : (
+            // If no user, show login/register buttons
             <>
               <Button variant="outlined" className="mr-2">
                 <a href="/login">Login</a>

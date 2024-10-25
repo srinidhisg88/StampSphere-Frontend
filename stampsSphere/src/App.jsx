@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Livebid from './pages/Livebid';
 import Dashboard from './pages/Dashboard.jsx';
 import Categories from './pages/Categories';
-import AdminDashboard from './pages/AdminDashboard.jsx';
+import AdminDashboard from './pages/AdminDashboard1.jsx';
 import Footer from './components/Footer.jsx';
 import Sidebar from './components/Sidebar.jsx';
 import Header from './components/Header.jsx';
@@ -11,6 +11,7 @@ import Register from './pages/Register.jsx';
 import { store } from './store';
 import { Provider } from 'react-redux';
 import HeroSection from './components/HeroSection.jsx';
+import UserView from "./pages/userdashboard1.jsx";
 const App = () => {
   return (
     <div className="h-screen flex overflow-hidden">
@@ -37,6 +38,8 @@ const App = () => {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/categories/:id" element={<Categories />} />
               <Route path="/dashboard/admin" element={<AdminDashboard />} />
+              <Route path="/dashboard/user" element={<UserView/>} />
+              
             </Routes>
           </div>
 
