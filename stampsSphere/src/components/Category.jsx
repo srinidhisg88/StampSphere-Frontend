@@ -1,5 +1,5 @@
 import React from 'react';
-import image1 from '../assets/CategoryList/MiniatureSheets.webp';
+import image1 from '../assets/CategoryList/MiniSheet.webp';
 import image2 from '../assets/CategoryList/SeTenant.webp';
 import image3 from '../assets/CategoryList/Service.webp';
 import image4 from '../assets/CategoryList/Thematic_copy.webp';
