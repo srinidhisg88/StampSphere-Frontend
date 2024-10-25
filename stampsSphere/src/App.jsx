@@ -12,6 +12,7 @@ import { store } from './store';
 import { Provider } from 'react-redux';
 import HeroSection from './components/HeroSection.jsx';
 import UserView from "./pages/userdashboard1.jsx";
+import LandingPage from './pages/LandingPage.jsx';
 const App = () => {
   return (
     <div className="h-screen flex overflow-hidden">
