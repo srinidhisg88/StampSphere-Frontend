@@ -68,9 +68,6 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      {/* <Typography color="blue-gray" className="text-center font-normal focus:text-red-500  hover:text-red-500">
-        &copy; 2024 StampSphere - India’s Stamp Collection, All in One Sphere
-      </Typography> */}
     </footer>
   );
 }
