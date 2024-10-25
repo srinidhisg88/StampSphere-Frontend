@@ -2,17 +2,31 @@ import { useState } from 'react';
 import { Button } from '@material-tailwind/react';
 import { Input } from '@material-tailwind/react';
 import loginStamp from '../assets/Auth/loginStamp.jpg';
-
+import { useNavigate } from "react-router-dom";
+import axios from '../axios';
 export default function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleSubmit = (e) => {
+  const navigate=useNavigate();
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Registered  with:', { username, email, role, password });
+    const data = {
+      username: username,
+      email: email,
+      role: role,
+      password: password,
+    }
+    console.log(data);
+    try {
+      const res = await axios.post("/api/auth/register", data);
+      console.log(res.data);
+      //dispatch notification
+      navigate('/');
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
@@ -64,15 +78,18 @@ export default function Register() {
               <label htmlFor="role" className="text-sm font-medium leading-none">
                 Role
               </label>
-              <Input
+              <select
                 id="role"
-                type="text"
-                placeholder="Enter your role"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
+                className="block w-full border border-gray-300 rounded-md p-2"
                 required
-              />
+              >
+                <option value="USER">USER</option>
+                <option value="ADMIN">ADMIN</option>
+              </select>
             </div>
+
             <div className="space-y-2">
               <label htmlFor="password" className="text-sm font-medium leading-none">
                 Password

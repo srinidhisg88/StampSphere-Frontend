@@ -2,14 +2,28 @@ import { useState } from 'react';
 import { Button } from '@material-tailwind/react';
 import { Input } from '@material-tailwind/react';
 import loginStamp from '../assets/Auth/loginStamp.jpg';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../slices/Authslice';
+import { useNavigate } from "react-router-dom";
+
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Login attempted with:', { username, password });
+    const data={
+      username:username,
+      password:password,
+    }
+    console.log('Login attempted with:', { data });
+
+    dispatch(loginUser(data));
+      navigate('/');
   };
 
   return (
