@@ -14,7 +14,7 @@ export const loginUser=createAsyncThunk('loginUser',async(data)=>{
 
 export const logoutUser=createAsyncThunk('logoutUser',async()=>{
     console.log("logout dispatch");
-    const response=await axios.get("/api/auth/logout");
+    const response=await axios.post("/api/auth/logout");
     console.log(response.data);  
 })
  
