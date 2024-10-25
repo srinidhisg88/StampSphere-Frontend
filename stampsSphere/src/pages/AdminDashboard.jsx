@@ -4,17 +4,9 @@ import Sidebar from '../components/Sidebar';
 const AdminDashboard = () => {
   return (
     <div className="min-h-screen flex">
-		<Sidebar/>
 
 		{/* Main Content */}
-		<div className="w-4/5 p-4 bg-light-red flex flex-col">
-			{/* Header Section */}
-			<div className="flex justify-end items-center mb-4 border border-gray-500 px-6 py-4">
-			<button className="ml-4 px-6 py-2 bg-red-500 text-white rounded-md transition-all duration-500 hover:scale-105 cursor-pointer">
-				Upload New Stamp
-			</button>
-			<div className="ml-4 w-12 h-12 rounded-full bg-gray-300 border border-black"></div>
-			</div>
+		<div className="w-full p-4 bg-light-red flex flex-col">
 
 			{/* Content Section */}
 			<div className="flex flex-1">
