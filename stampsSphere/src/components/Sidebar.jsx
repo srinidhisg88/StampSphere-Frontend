@@ -20,7 +20,8 @@ const Sidebar = () => {
           <li className="my-2 p-2 border-b">
             <a href="/categories/1">Categories</a>
           </li>
-          <li className="my-2 p-2 border-b">Auctions</li>
+          <li className="my-2 p-2 border-b"><a href="/livebid">Auctions</a></li>
+          <li className="my-2 p-2 border-b"><a href="/dashboard/admin">dashboard</a></li>
           <li className="my-2 p-2 border-b">Community</li>
         </ul>
       </nav>

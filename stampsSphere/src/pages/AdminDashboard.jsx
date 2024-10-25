@@ -1,85 +1,108 @@
 import React, { useState } from 'react';
+import axios from '../axios';
 
 const AdminDashboard = () => {
   const [category, setCategory] = useState('');
   const [stampName, setStampName] = useState('');
   const [stampDescription, setStampDescription] = useState('');
   const [stampImage, setStampImage] = useState(null);
+  const [startingBid, setStartingBid] = useState('');
 
   const handleImageUpload = (e) => {
     setStampImage(e.target.files[0]);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Code to handle the form submission, such as sending the data to the server
-    console.log('Category:', category);
-    console.log('Stamp Name:', stampName);
-    console.log('Stamp Description:', stampDescription);
-    console.log('Stamp Image:', stampImage);
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Ensure the event object is properly handled
+
+
+    const data={
+      categoryName:category,
+      name:stampName,
+      description:stampDescription,
+      image:stampImage,
+      starting_bid:startingBid,
+    }
+    // const formData = new FormData();
+    // formData.append('name', stampName);
+    // formData.append('description', stampDescription);
+    // formData.append('categoryName', category);
+    // formData.append('starting_bid', startingBid);
+    // formData.append('image', stampImage);
+
+    console.log(data);
+    try {
+      const response = await axios.post('/api/stamp/createStamp', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      console.log('Stamp uploaded successfully:', response.data);
+      // Reset form fields
+      setCategory('');
+      setStampName('');
+      setStampDescription('');
+      setStampImage(null);
+      setStartingBid('');
+    } catch (error) {
+      console.error('Error uploading stamp:', error);
+    }
   };
 
   return (
     <div className="min-h-screen flex">
-
-      {/* Main Content */}
       <div className="w-full p-4 bg-light-red flex flex-col">
-        {/* Form Section */}
         <div className="mb-6 p-4 bg-white rounded shadow-md">
           <h2 className="text-xl font-semibold mb-4">Add New Stamp</h2>
+          {/* Ensure handleSubmit is passed as a callback */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-gray-700 font-medium">Category:</label>
+              <label>Category:</label>
               <input
                 type="text"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                placeholder="Enter category"
-                className="w-full p-2 border rounded mt-1"
+                className="w-full p-2 border rounded"
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-medium">Stamp Name:</label>
+              <label>Stamp Name:</label>
               <input
                 type="text"
                 value={stampName}
                 onChange={(e) => setStampName(e.target.value)}
-                placeholder="Enter stamp name"
-                className="w-full p-2 border rounded mt-1"
+                className="w-full p-2 border rounded"
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-medium">Stamp Description:</label>
+              <label>Starting Bid:</label>
+              <input
+                type="number"
+                value={startingBid}
+                onChange={(e) => setStartingBid(e.target.value)}
+                className="w-full p-2 border rounded"
+              />
+            </div>
+            <div>
+              <label>Description:</label>
               <textarea
                 value={stampDescription}
                 onChange={(e) => setStampDescription(e.target.value)}
-                placeholder="Enter stamp description"
-                className="w-full p-2 border rounded mt-1"
+                className="w-full p-2 border rounded"
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-medium">Stamp Image:</label>
-              <input
-                type="file"
-                onChange={handleImageUpload}
-                className="w-full p-2 mt-1"
-              />
+              <label>Image:</label>
+              <input type="file" onChange={handleImageUpload} />
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white p-2 rounded mt-4 hover:bg-blue-600"
+              className="w-full bg-blue-500 text-white p-2 rounded"
             >
               Upload Stamp
             </button>
           </form>
-        </div>
-
-        {/* Card Section */}
-        <div className="p-4 bg-white rounded shadow-md">
-          <h2 className="text-xl font-semibold mb-2">Stamp Details</h2>
-          {/* <div className='grid grid-cols-4'>
-            <TrackingCard/>
-          </div> */}
         </div>
       </div>
     </div>
@@ -87,60 +110,3 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
-
-
-
-
-// import React from 'react';
-// import Sidebar from '../components/Sidebar';
-
-// const AdminDashboard = () => {
-//   return (
-//     <div className="min-h-screen flex">
-
-// 		{/* Main Content */}
-// 		<div className="w-full p-4 bg-light-red flex flex-col">
-// 			<div>
-// 				{/* form for  taking category, stamp id, stamp image upload option and a upload button*/}
-// 			</div>
-// 			<div>
-// 				{/*Card*/}
-// 			</div>
-// 		</div>
-//     </div>
-//   );
-// };
-
-// export default AdminDashboard;
-
-
-
-
-
-
-
-// {/* Content Section */}
-// <div className="flex flex-1">
-// {/* Left Section */}
-// <div className="w-2/3 border rounded-md p-4 border-gray-500">
-// 	<h2 className="font-bold mb-2">Stamps: Sold or Not</h2>
-// 	<div className="border px-4 py-2 rounded-md min-h-[50px] flex flex-col bg-dark-red justify-center mb-2 border-gray-500">Recent Stamp 1</div>
-// 	<div className="border px-4 py-2 rounded-md min-h-[50px] flex flex-col bg-dark-red justify-center mb-2 border-gray-500">Recent Stamp 2</div>
-// 	<div className="border px-4 py-2 rounded-md min-h-[50px] flex flex-col bg-dark-red justify-center mb-2 border-gray-500">Recent Stamp 3</div>
-// </div>
-
-// {/* Right Section */}
-// <div className="w-1/3 ml-4 flex flex-col space-y-4 ">
-// 	<div className="border rounded-md p-4 border-gray-500 flex-1">
-// 		<h3 className="font-bold">Categories: Total Sales</h3>
-// 		<p className="mt-2">
-// 			Based on this, we get the best sellers.
-// 		</p>
-// 	</div>
-
-// 	<div className="border rounded-md p-4 border-gray-500 flex-1">
-// 		<h3 className="font-bold">No of Philatelists</h3>
-// 		<p>Daily Traffic and Active Users</p>
-// 	</div>
-// </div>
-// </div>

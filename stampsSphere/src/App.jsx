@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Livebid from './pages/Livebid';
 import Dashboard from './pages/Dashboard.jsx';
 import Categories from './pages/Categories';
-import AdminDashboard from './pages/AdminDashboard1.jsx';
+import AdminDashboard from './pages/AdminDashboard.jsx';
 import Footer from './components/Footer.jsx';
 import Sidebar from './components/Sidebar.jsx';
 import Header from './components/Header.jsx';
