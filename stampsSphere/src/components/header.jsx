@@ -5,7 +5,7 @@ export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Example state for login
 
   return (
-    <header className="bg-white shadow-md dark:bg-gray-800 p-4">
+    <header className="bg-gray-400 shadow-md dark:bg-gray-800 p-4">
       <div className="flex justify-between items-center mx-6">
         {/* Title Section */}
         <h1 className="text-xl font-semibold dark:text-white">StampSphere</h1>

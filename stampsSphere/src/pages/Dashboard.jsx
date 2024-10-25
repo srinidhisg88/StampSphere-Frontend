@@ -1,5 +1,6 @@
 import React from 'react';
 import InfoCard from '../components/InfoCard';
+import profileImage from '../assets/images/Profile/Hero.jpg';
 
 const userCollection = [
 	{
@@ -90,7 +91,7 @@ const Dashboard = () => {
 						<div className="flex mb-6 p-4 bg-white shadow-lg rounded-lg border border-gray-200">
 							{/* Profile Image Section */}
 							<div className="w-1/3 flex items-center justify-center">
-								<div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 shadow-md border-4 border-white"></div>
+								<img className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 shadow-md border-4 border-white" src={profileImage} />
 							</div>
 
 							{/* Stats Section */}
