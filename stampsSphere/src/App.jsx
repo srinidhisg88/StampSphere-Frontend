@@ -10,6 +10,7 @@ import Login from './pages/login.jsx';
 import Register from './pages/Register.jsx';
 import { store } from './store';
 import { Provider } from 'react-redux';
+import HeroSection from './components/HeroSection.jsx';
 const App = () => {
   return (
 
@@ -30,6 +31,7 @@ const App = () => {
           {/* Main Content - Below Header */}
           <div className="flex-1 overflow-auto pt-16">
             <Routes>
+              <Route path="/" element={<HeroSection/>} />
               <Route path="/livebid" element={<Livebid />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
