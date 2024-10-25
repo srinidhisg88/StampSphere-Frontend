@@ -1,14 +1,13 @@
 import { Typography } from "@material-tailwind/react";
-
+import Logo from "../assets/CategoryList/StampSpherebg.png"
 export default function Footer() {
   return (
     <footer className="w-full bg-white pb-10">
       <hr className="m-5" />
       <div className="ml-10 flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
-        <img src="https://docs.material-tailwind.com/img/logo-ct-dark.png" alt="logo-ct" className="w-10" />
         <div className="flex-col gap-20">
           <Typography color="text-red-500" className="text-center font-normal focus:text-red-500  hover:text-red-500">
-            &copy; 2024 StampSphere - India’s Stamp Collection, All in One Sphere
+            &copy; 2024 StampSphere - India’s Stamp Collection, All in One Sphere
           </Typography>
           <div className="flex gap-4 text-black-400  sm:justify-center">
             <Typography as="a" href="#" className="hover:text-red-500 opacity-80 transition-opacity hover:opacity-100">
