@@ -6,7 +6,6 @@ import AdminDashboard from './pages/AdminDashboard.jsx';
 import Footer from './components/footer.jsx';
 import Sidebar from './components/Sidebar.jsx';
 import Header from './components/header.jsx';
-
 const App = () => {
   return (
     <div className="h-screen flex overflow-hidden">
