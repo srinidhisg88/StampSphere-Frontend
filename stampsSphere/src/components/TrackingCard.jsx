@@ -1,38 +1,41 @@
 import React from 'react'
-import image from '../assets/images/offical_stamps/img1.jpg'
+import {
+    Card as MaterialCard,
+    CardHeader,
+    CardBody,
+    CardFooter,
+    Typography,
+    Button,
+  } from "@material-tailwind/react";
 
-const TrackingCard = () => {
+const TrackingCard = ({ image, name, orderedBy }) => {
   return (
     <MaterialCard className="mt-6 w-96">
-        <CardHeader color="blue-gray" className="relative h-56 overflow-hidden">
-          <img
-            src={image}
-            alt="card-image"
-            className="w-full h-full object-contain" // Adjusted to fit the entire image without cropping
-          />
-        </CardHeader>
-  
-        {/* <CardHeader color="blue-gray" className="relative h-56">
-            <img
-              src={image}
-              alt="card-image"
-            />
-          </CardHeader> */}
-        <CardBody>
-          <Typography variant="h5" color="blue-gray" className="mb-2">
-            {name}
-          </Typography>
-          <Typography>
-            {about}
-            <p className="font-bold">Price: {price}</p>
-          </Typography>
-        </CardBody>
-        <CardFooter className="pt-0">
-          <Button className="mt-2 px-4 py-2 bg-red-500 text-white rounded-md transition-all duration-500 hover:scale-105">{state}</Button>
-        </CardFooter>
-      </MaterialCard>
+      <CardHeader color="blue-gray" className="relative h-56 overflow-hidden">
+        <img
+          src={image}
+          alt="card-image"
+          className="w-full h-full object-contain"
+        />
+      </CardHeader>
+
+      <CardBody>
+        <Typography variant="h5" color="blue-gray" className="mb-2">
+          {name}
+        </Typography>
+        <Typography>
+          Ordered By: <span className="font-bold">{orderedBy}</span>
+        </Typography>
+        <div className="mt-4 p-2 w-full bg-gray-200 text-center rounded-md">
+          Current Status: Out for Delivery
+        </div>
+      </CardBody>
+      
+      <CardFooter className="pt-0">
+        {/* Optional Button or additional footer content can go here */}
+      </CardFooter>
+    </MaterialCard>
   )
 }
 
 export default TrackingCard;
-  
