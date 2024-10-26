@@ -3,14 +3,16 @@ import image1 from '../assets/CategoryList/MiniSheet.webp';
 import image2 from '../assets/CategoryList/SeTenant.webp';
 import image3 from '../assets/CategoryList/Service.webp';
 import image4 from '../assets/CategoryList/Thematic_copy.webp';
+import image5 from '../assets/category/Comma.jpg';
+import image6 from '../assets/images/difinitive_stamps/img1.jpg';
 
 const imageArray = [
     { src: image1, alt: "Miniature Sheets" },
     { src: image2, alt: "Se Tenant" },
     { src: image3, alt: "Service" },
     { src: image4, alt: "Thematic" },
-    { src: image4, alt: "Thematic" },
-    { src: image4, alt: "Thematic" },
+    { src: image5, alt: "Commemora" },
+    { src: image6, alt: "Difinitive" },
 ];
 // items-center 
 const CategoryImage = ({ src, alt }) => ( 
