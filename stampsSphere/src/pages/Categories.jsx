@@ -14,7 +14,85 @@ import img11 from '../assets/images/difinitive_stamps/img11.jpg'
 import InfoCard from '../components/InfoCard';
 
 
-const definitiveImg = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11];
+const userCollection = [
+	{
+		image: img1,
+		name: 'Syed Ahmed Khan',
+		about: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni fugit velit error voluptas. Minus, labore, molestias placeat vel natus maiores illo impedit obcaecati, odit id delectus a! Eius, voluptatibus doloribus.",
+		price: 'Rs.159',
+		state: 'Buy Now'
+	},
+	{
+		image: img2,
+		name: 'Bhakthivedantha Swami',
+		about: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni fugit velit error voluptas. Minus, labore, molestias placeat vel natus maiores illo impedit obcaecati, odit id delectus a! Eius, voluptatibus doloribus.",
+		price: 'Rs.259',
+		state: 'Buy Now'
+	},
+	{
+		image: img3,
+		name: 'Nehru',
+		about: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni fugit velit error voluptas. Minus, labore, molestias placeat vel natus maiores illo impedit obcaecati, odit id delectus a! Eius, voluptatibus doloribus.",
+		price: 'Rs.549',
+		state: 'Buy Now'
+	},
+	{
+		image: img4,
+		name: 'Gandhi and Nehru',
+		about: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni fugit velit error voluptas. Minus, labore, molestias placeat vel natus maiores illo impedit obcaecati, odit id delectus a! Eius, voluptatibus doloribus.",
+		price: 'Rs.109',
+		state: 'Buy Now'
+	},
+	{
+		image: img5,
+		name: 'G.B. Panth',
+		about: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni fugit velit error voluptas. Minus, labore, molestias placeat vel natus maiores illo impedit obcaecati, odit id delectus a! Eius, voluptatibus doloribus.",
+		price: 'Rs.100',
+		state: 'Buy Now'
+	},
+	{
+		image: img6,
+		name: 'R Srinivasan',
+		about: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni fugit velit error voluptas. Minus, labore, molestias placeat vel natus maiores illo impedit obcaecati, odit id delectus a! Eius, voluptatibus doloribus.",
+		price: 'Rs.359',
+		state: 'Buy Now'
+	},
+	{
+		image: img7,
+		name: 'Indian Postage',
+		about: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni fugit velit error voluptas. Minus, labore, molestias placeat vel natus maiores illo impedit obcaecati, odit id delectus a! Eius, voluptatibus doloribus.",
+		price: 'Rs.155',
+		state: 'Buy Now'
+	},
+	{
+		image: img8,
+		name: 'Mahathma Ghandi',
+		about: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni fugit velit error voluptas. Minus, labore, molestias placeat vel natus maiores illo impedit obcaecati, odit id delectus a! Eius, voluptatibus doloribus.",
+		price: 'Rs.434',
+		state: 'Buy Now'
+	},
+	{
+		image: img9,
+		name: 'Pandith Ravishankar Shukla',
+		about: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni fugit velit error voluptas. Minus, labore, molestias placeat vel natus maiores illo impedit obcaecati, odit id delectus a! Eius, voluptatibus doloribus.",
+		price: 'Rs.24',
+		state: 'Buy Now'
+	},
+	{
+		image: img10,
+		name: 'Santh Gadde Baba',
+		about: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni fugit velit error voluptas. Minus, labore, molestias placeat vel natus maiores illo impedit obcaecati, odit id delectus a! Eius, voluptatibus doloribus.",
+		price: 'Rs.155',
+		state: 'Buy Now'
+	},
+	{
+		image: img11,
+		name: 'Swami Brahmananda',
+		about: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni fugit velit error voluptas. Minus, labore, molestias placeat vel natus maiores illo impedit obcaecati, odit id delectus a! Eius, voluptatibus doloribus.",
+		price: 'Rs.659',
+		state: 'Buy Now'
+	},
+];
 
 const CategoryPage = () => {
 	return (
@@ -29,8 +107,9 @@ const CategoryPage = () => {
 				<div className="p-4 grid grid-cols-3 gap-4 flex-1">
 
 					{/* Stamp Cards */}
-					{definitiveImg.map((images) => (
-						<InfoCard image={images} />
+					{userCollection.map((element) => (
+						<InfoCard image={element.image} name={element.name}
+						about={element.about} price={element.price} state={element.state}/>
 					))}
 
 					
