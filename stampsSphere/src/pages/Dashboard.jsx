@@ -1,6 +1,15 @@
 import React from 'react';
 import InfoCard from '../components/InfoCard';
 import profileImage from '../assets/images/Profile/Hero.jpg';
+import User from './userdashboard1';
+import {
+	Card as MaterialCard,
+	CardHeader,
+	CardBody,
+	CardFooter,
+	Typography,
+	Button,
+} from "@material-tailwind/react";
 
 const userCollection = [
 	{
@@ -75,7 +84,13 @@ const userCollection = [
 	}
 ];
 
-
+const track = {
+	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6QWAvGb7cioA_yVmktR_v2FNBtx0iI5GCOA&s',
+	name: 'Rare Victorian Stamp',
+	about: 'A rare Victorian-era stamp featuring Queen Victoria, perfect for collectors.',
+	price: 'Rs.159',
+	state: 'Sell',
+}
 const Dashboard = () => {
 	return (
 		<div className="min-h-screen  flex flex-col ">
@@ -111,23 +126,6 @@ const Dashboard = () => {
 							</div>
 						</div>
 
-						{/* <div className="flex mb-4 ">
-							<div className="w-1/3 flex items-center justify-center">
-								<div className="w-24 h-24 rounded-full bg-gray-300"></div>
-							</div>
-							<div className="w-2/3 flex space-x-4 border border-gray-500 px-2 py-2">
-								<div className="rounded-md p-4 flex-grow text-center border border-gray-500">
-									networth
-								</div>
-								<div className="rounded-md p-4 flex-grow text-center border border-gray-500">
-									bought
-								</div>
-								<div className="rounded-md p-4 flex-grow text-center border border-gray-500">
-									sold
-								</div>
-							</div>
-						</div> */}
-
 						{/* Stamp Gallery */}
 						<div className="border rounded-md p-4">
 							<h2 className="font-bold mb-4 text-center">Stamp Gallery</h2>
@@ -137,15 +135,36 @@ const Dashboard = () => {
 										about={element.about} price={element.price} state={element.state} />
 								))}
 							</div>
+						</div> 
+						<div className='text-3xl text-black mt-12 ml-20'>
+							<h1>Stamps Bought</h1>
 						</div>
-
-						{/* Bottom Section */}
-						<div className="p-4 grid grid-cols-2">
-							<div className="border p-4 text-center bg-dark-red rounded-full transition-all duration-500 hover:scale-105 cursor-pointer">Bought</div>
+							<div className=" m-20 grid grid-cols-2 gap-4 w-full max-w-3xl"> {/* Adjusted max width */}
+								<div className="border p-4 text-center bg-dark-red transition-all duration-500 hover:scale-105 cursor-pointer"> {/* Removed rounded-full */}
+									<MaterialCard className="mt-0 w-full"> {/* Adjusted to fit within the full width */}
+										<CardHeader color="blue-gray" className="relative h-56 overflow-hidden">
+											<img
+												src={track.image}
+												alt="card-image"
+												className="w-full h-full object-contain"
+											/>
+										</CardHeader>
+										<CardBody>
+											<Typography variant="h5" color="blue-gray" className="mb-2">
+												{track.name}
+											</Typography>
+											<Typography variant="h6" color="blue-gray" className="mb-2">
+												{track.about}
+											</Typography>
+											<Typography variant="h6" color="blue-gray" className="mb-2">
+												{track.price}
+											</Typography>
+											<User/>
+										</CardBody>
+									</MaterialCard>
+							</div>
 						</div>
 					</div>
-
-
 				</div>
 			</div>
 		</div>

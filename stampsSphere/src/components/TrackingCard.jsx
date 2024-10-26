@@ -7,7 +7,8 @@ import {
     Typography,
     Button,
   } from "@material-tailwind/react";
-
+import Admin from '../pages/AdminDashboard1';
+import { MessageDialog } from './Dialogbox';
 const TrackingCard = ({ image, name, orderedBy }) => {
   return (
     <MaterialCard className="mt-6 w-96">
@@ -26,8 +27,9 @@ const TrackingCard = ({ image, name, orderedBy }) => {
         <Typography>
           Ordered By: <span className="font-bold">{orderedBy}</span>
         </Typography>
-        <div className="mt-4 p-2 w-full bg-gray-200 text-center rounded-md">
-          Current Status: Out for Delivery
+        <div className="p-2 w-full text-center rounded-md">
+          {/* <Admin/> */}
+          <MessageDialog/>
         </div>
       </CardBody>
       

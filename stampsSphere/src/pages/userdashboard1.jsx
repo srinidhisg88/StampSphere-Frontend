@@ -30,7 +30,7 @@ const User = () => {
   const displayPreviousStatus = state.currentStatus === 'sold' ? 'N/A' : state.previousStatus || 'N/A';
 
   return (
-    <div className="mt-20">
+    <div className="mt-20 text-xl text-black">
       <h2>Yet to be Done: {state.currentStatus}</h2>
       <h3>Current Status: {displayPreviousStatus}</h3>
     </div>
